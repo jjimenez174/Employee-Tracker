@@ -4,7 +4,7 @@
 The Employee Tracker is for the user to view and manage their departments, roles, and employees within their company. 
 
 
-[Link to Demo](https://drive.google.com/file/d/1E8pzVzH70Mzi-PCue0uigaY5PzG3c_l5/view?usp=sharing)
+[Link to Demo]()
 
 ## Table of Content
 [Installation](#installation)  

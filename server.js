@@ -44,14 +44,23 @@ const employee_tracker = () => {
                         employee_tracker();
                     });
                 } else if (answers.prompt === 'View All Roles') {
-                    db.query(`SELECT * FROM role`, (error, result) => {
-                        if (error) return console.log(err);
+                    const sql = `SELECT role.id, role.title, role.salary, department.name AS department, role.salary
+                    FROM role
+                    LEFT JOIN department ON role.department_id = department.id;`
+                    db.query(sql, (error, result) => {
+                        if (error) return console.log(error);
                         console.table(result);
                         employee_tracker();
                     });
                 } else if (answers.prompt === 'View All Employees') {
-                    db.query(`SELECT * FROM employee`, (error, result) => {
-                        if (error) return console.log(err);
+                    const sql = `SELECT employee.id, employee.first_name, employee.last_name,
+                    role.title, department.name, role.salary, CONCAT(manager.first_name, " ", manager.last_name) AS manager
+                   FROM employee
+                   LEFT JOIN role ON employee.role_id = role.id
+                   LEFT JOIN department ON role.department_id = department.id
+                   LEFT JOIN employee manager ON employee.manager_id = manager.id;`
+                    db.query(sql, (error, result) => {
+                        if (error) return console.log(error);
                         console.table(result);
                         employee_tracker();
                     });

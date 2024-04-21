@@ -14,7 +14,7 @@ VALUES ('Salesperson', 80000, 1),
 
 -- Insert employee information into employee table
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ('William', 'Gil', 4, 1),
-       ('Alena', 'Rios', 3, 2),
-       ('Zev', 'Silver', 2, 3),
-       ('Ryan', 'Javadi', 1, 4);
+VALUES ('William', 'Gil', 4, NULL),
+       ('Alena', 'Rios', 3, NULL),
+       ('Zev', 'Silver', 2, 1),
+       ('Ryan', 'Javadi', 1, 2);
